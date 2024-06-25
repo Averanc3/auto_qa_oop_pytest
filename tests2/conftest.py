@@ -1,11 +1,11 @@
 import pytest
 
+
 @pytest.fixture
 def figure_data(request):
     print("\nStart API")
 
     def _wrapper(type_of_test: str):
-
         """Circle positive tests"""
         if type_of_test == "integer_circle_area":
             return 6, 113.1
@@ -54,7 +54,7 @@ def figure_data(request):
         if type_of_test == "zero":
             return 0, 7, 0
         if type_of_test == "string":
-            return '5', '7', 2
+            return "5", "7", 2
         if type_of_test == "not_existing_triangle":
             return 4, 5, 20
 

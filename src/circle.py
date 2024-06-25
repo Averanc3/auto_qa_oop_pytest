@@ -17,4 +17,3 @@ class Circle(Figure):
     @property
     def get_perimeter(self):
         return round((2 * pi * self.r), 2)
-
