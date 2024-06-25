@@ -2,9 +2,9 @@ from src.figure import Figure
 
 
 class Triangle(Figure):
-    def __init__(self, a: float, b: float, c: float):
+    def __init__(self, a: int | float, b: int | float, c: int | float):
         for i in (a, b, c):
-            if not isinstance(i, (int, float)):
+            if not isinstance(i, (int, float)) or isinstance(i, bool):
                 raise ValueError("Sides of triangle should be a numbers")
         if a <= 0 or b <= 0:
             raise ValueError("Sides should be above 0")
@@ -17,8 +17,8 @@ class Triangle(Figure):
     @property
     def get_area(self):
         p = (self.a + self.b + self.c) / 2
-        return (p * (p - self.a) * (p - self.b) * (p - self.c)) ** 0.5
+        return round(((p * (p - self.a) * (p - self.b) * (p - self.c)) ** 0.5), 2)
 
     @property
     def get_perimeter(self):
-        return self.a + self.b + self.c
+        return round((self.a + self.b + self.c), 2)
